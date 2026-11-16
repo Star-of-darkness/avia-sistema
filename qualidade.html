@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+
+{% block title %}Qualidade | AVIA{% endblock %}
+
+{% block content %}
+
+<a class="voltar" href="{{ url_for('dashboard') }}">← Voltar ao painel</a>
+
+<div class="cartao centralizar">
+
+    <div style="text-align:center;">
+        <span class="icone">🔍</span>
+        <h1>Inspeção de qualidade</h1>
+        <p class="decoracao">Cada detalhe importa!</p>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <label>Imagem da inspeção</label>
+
+        <input type="file" name="image"
+               accept="image/*" required>
+
+        <button class="botao" style="width:100%;">
+            Enviar imagem
+        </button>
+
+    </form>
+
+    <p style="font-size:12px; margin-top:20px;">
+        Selecione uma imagem para o registro demonstrativo.
+    </p>
+
+</div>
+
+{% endblock %}

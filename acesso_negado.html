@@ -1,0 +1,32 @@
+
+{% extends "base.html" %}
+
+{% block title %}Acesso negado | AVIA{% endblock %}
+
+{% block content %}
+
+<div class="cartao centralizar" style="text-align:center;">
+
+    <span class="icone">🚧</span>
+
+    <h1>Acesso não permitido!</h1>
+
+    <p class="decoracao">Ops, parece que você entrou na área errada.</p>
+
+    <p>
+        Seu perfil não possui autorização para acessar
+        esta funcionalidade.
+    </p>
+
+    <p style="margin:20px 0;">
+        Entre em contato com o administrador caso
+        precise de acesso.
+    </p>
+
+    <a href="{{ url_for('dashboard') }}" class="botao">
+        Voltar ao painel
+    </a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+
+{% extends "base.html" %}
+
+{% block title %}Painel | AVIA{% endblock %}
+
+{% block content %}
+
+<div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:15px; align-items:center;">
+
+    <div>
+        <p class="decoracao">Área de trabalho</p>
+        <h1>Bem-vindo à AVIA!</h1>
+        <p>Perfil: <strong>{{ role_name }}</strong></p>
+        <p>Usuário: {{ email }}</p>
+    </div>
+
+    <a href="{{ url_for('logout') }}" class="botao">
+        Sair ↗
+    </a>
+
+</div>
+
+<hr style="margin:25px 0; border:1px solid #E1E5EB;">
+
+<h2>O que deseja acessar?</h2>
+
+<p class="decoracao" style="margin-bottom:20px;">
+    Suas ferramentas disponíveis.
+</p>
+
+<div class="grade">
+
+    {% if 'produtos' in permissions %}
+    <a href="{{ url_for('products') }}" class="item">
+        <span class="icone">⚙️</span>
+        <h2>Produtos</h2>
+        <p>Consultar catálogo.</p>
+    </a>
+    {% endif %}
+
+    {% if 'estoque' in permissions %}
+    <a href="{{ url_for('inventory') }}" class="item">
+        <span class="icone">📦</span>
+        <h2>Estoque</h2>
+        <p>Consultar disponibilidade.</p>
+    </a>
+    {% endif %}
+
+    {% if 'compras' in permissions %}
+    <a href="{{ url_for('purchases') }}" class="item">
+        <span class="icone">🧾</span>
+        <h2>Compras</h2>
+        <p>Consultar pedidos.</p>
+    </a>
+    {% endif %}
+
+    {% if 'upload_recebimento' in permissions %}
+    <a href="{{ url_for('upload_receiving') }}" class="item">
+        <span class="icone">📥</span>
+        <h2>Recebimento</h2>
+        <p>Enviar imagens.</p>
+    </a>
+    {% endif %}
+
+    {% if 'upload_qualidade' in permissions %}
+    <a href="{{ url_for('upload_quality') }}" class="item">
+        <span class="icone">🔍</span>
+        <h2>Qualidade</h2>
+        <p>Enviar imagens de inspeção.</p>
+    </a>
+    {% endif %}
+
+</div>
+
+{% endblock %}

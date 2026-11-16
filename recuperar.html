@@ -1,0 +1,42 @@
+
+{% extends "base.html" %}
+
+{% block title %}Recuperar senha | AVIA{% endblock %}
+
+{% block content %}
+
+<a class="voltar" href="{{ url_for('home') }}">← Voltar</a>
+
+<div class="cartao centralizar" style="text-align:center;">
+
+    <span class="icone">✉️</span>
+
+    <h1>Esqueceu a senha?</h1>
+
+    <p class="decoracao">Vamos ajudar você!</p>
+
+    <p>
+        Informe seu endereço de e-mail para realizar
+        uma verificação demonstrativa.
+    </p>
+
+    <form method="POST">
+
+        <label>E-mail cadastrado</label>
+
+        <input type="email" name="email"
+               placeholder="seuemail@email.com" required>
+
+        <button class="botao" style="width:100%;">
+            Verificar e-mail
+        </button>
+
+    </form>
+
+    <p style="font-size:12px; margin-top:20px;">
+        A verificação é simulada. Nenhum e-mail será enviado.
+    </p>
+
+</div>
+
+{% endblock %}

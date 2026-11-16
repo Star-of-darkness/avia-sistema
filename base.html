@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}AVIA | Peças Automotivas{% endblock %}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@500;600;700&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --azul: #102C50;
+            --azul-claro: #24496F;
+            --bordo: #751F35;
+            --bordo-claro: #A34B60;
+            --fundo: #F1F3F6;
+            --branco: #FFFFFF;
+            --texto: #26364A;
+            --cinza: #778394;
+            --borda: #E1E5EB;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--fundo);
+            color: var(--texto);
+            font-family: 'Nunito', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: var(--azul);
+            color: white;
+            padding: 17px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px #102C5020;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: white;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 35px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .logo small {
+            display: block;
+            font-family: 'Nunito', sans-serif;
+            font-size: 9px;
+            letter-spacing: 3px;
+            text-align: center;
+        }
+
+        .header-note {
+            font-family: 'Dancing Script', cursive;
+            font-size: 23px;
+            color: #F0C7D0;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: 35px auto;
+            flex: 1;
+        }
+
+        h1, h2, h3 {
+            color: var(--azul);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        h1 {
+            font-size: 42px;
+        }
+
+        .subtitulo {
+            color: var(--bordo);
+            font-family: 'Dancing Script', cursive;
+            font-size: 25px;
+            margin: 5px 0 20px;
+        }
+
+        .cartao {
+            background: white;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 7px 25px #102C5010;
+            border: 1px solid var(--borda);
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 13px 23px;
+            border: none;
+            border-radius: 11px;
+            background: var(--bordo);
+            color: white;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            text-decoration: none;
+            cursor: pointer;
+            transition: .2s;
+        }
+
+        .botao:hover {
+            background: var(--bordo-claro);
+            transform: translateY(-2px);
+        }
+
+        .botao-azul {
+            background: var(--azul);
+        }
+
+        .botao-azul:hover {
+            background: var(--azul-claro);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 13px;
+            margin: 7px 0 17px;
+            border: 1px solid var(--borda);
+            border-radius: 10px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 14px;
+            outline: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--bordo);
+            box-shadow: 0 0 0 3px #751F3515;
+        }
+
+        label {
+            color: var(--azul);
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        a {
+            color: var(--bordo);
+        }
+
+        .mensagem {
+            padding: 13px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .mensagem.error {
+            background: #F9E6EB;
+            color: #8B1F3B;
+        }
+
+        .mensagem.success {
+            background: #E5F4E9;
+            color: #25643A;
+        }
+
+        .grade {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .item {
+            background: white;
+            border-radius: 17px;
+            padding: 22px;
+            border-bottom: 5px solid var(--bordo);
+            box-shadow: 0 5px 18px #102C5010;
+            text-decoration: none;
+            color: var(--azul);
+            transition: .2s;
+        }
+
+        .item:hover {
+            transform: translateY(-4px);
+        }
+
+        .icone {
+            font-size: 35px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .voltar {
+            display: inline-block;
+            margin-bottom: 18px;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .centralizar {
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        .decoracao {
+            font-family: 'Dancing Script', cursive;
+            color: var(--bordo);
+            font-size: 21px;
+        }
+
+        footer {
+            text-align: center;
+            background: var(--azul);
+            color: #DCE4EF;
+            padding: 18px;
+            font-size: 11px;
+        }
+
+        @media(max-width: 700px) {
+            .grade {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header {
+                padding: 15px 5%;
+            }
+
+            .header-note {
+                display: none;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+        }
+
+        @media(max-width: 450px) {
+            .grade {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                width: 94%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="{{ url_for('home') }}" class="logo">
+        AVIA
+        <small>PEÇAS AUTOMOTIVAS</small>
+    </a>
+
+    <span class="header-note">
+        Peças certas, escolhas inteligentes.
+    </span>
+</header>
+
+<main>
+
+    {% with mensagens = get_flashed_messages(with_categories=true) %}
+        {% for categoria, mensagem in mensagens %}
+            <div class="mensagem {{ categoria }}">
+                {{ mensagem }}
+            </div>
+        {% endfor %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+
+</main>
+
+<footer>
+    AVIA • Sistema de Gestão de Peças Automotivas
+    <br>
+    <span class="decoracao">Organização em cada detalhe.</span>
+    <br>
+<a href="{{ url_for('documentacao') }}"
+   style="color:#F0C7D0;">
+    Documentação do projeto
+</a>
+</footer>
+
+</body>
+</html>

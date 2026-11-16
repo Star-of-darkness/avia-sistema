@@ -1,0 +1,38 @@
+
+{% extends "base.html" %}
+
+{% block title %}Recebimento | AVIA{% endblock %}
+
+{% block content %}
+
+<a class="voltar" href="{{ url_for('dashboard') }}">← Voltar ao painel</a>
+
+<div class="cartao centralizar">
+
+    <div style="text-align:center;">
+        <span class="icone">📦</span>
+        <h1>Recebimento</h1>
+        <p class="decoracao">Registro de imagens dos produtos.</p>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <label>Selecione uma imagem</label>
+
+        <input type="file" name="image"
+               accept="image/*" required>
+
+        <button class="botao" style="width:100%;">
+            Enviar imagem
+        </button>
+
+    </form>
+
+    <p style="font-size:12px; margin-top:20px;">
+        Formatos permitidos: PNG, JPG, JPEG, GIF e WEBP.
+    </p>
+
+</div>
+
+{% endblock %}
+

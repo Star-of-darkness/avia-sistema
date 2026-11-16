@@ -1,0 +1,61 @@
+
+{% extends "base.html" %}
+
+{% block title %}Início | AVIA{% endblock %}
+
+{% block content %}
+
+<div style="text-align:center; margin:35px 0;">
+    <p class="decoracao">Seja bem-vindo à nossa empresa!</p>
+    <h1>Quem você é?</h1>
+    <p>Escolha seu perfil para acessar o sistema.</p>
+</div>
+
+<div class="grade">
+
+    <a class="item" href="{{ url_for('login', role='recebimento') }}">
+        <span class="icone">📦</span>
+        <h2>Operador de recebimento</h2>
+        <p>Controle de produtos recebidos.</p>
+    </a>
+
+    <a class="item" href="{{ url_for('login', role='qualidade') }}">
+        <span class="icone">🔍</span>
+        <h2>Inspetor de qualidade</h2>
+        <p>Inspeção e avaliação de peças.</p>
+    </a>
+
+    <a class="item" href="{{ url_for('login', role='loja') }}">
+        <span class="icone">🏪</span>
+        <h2>Gerente da loja</h2>
+        <p>Gerenciamento da loja.</p>
+    </a>
+
+    <a class="item" href="{{ url_for('login', role='compras') }}">
+        <span class="icone">🧾</span>
+        <h2>Gestor de compras</h2>
+        <p>Controle de aquisições.</p>
+    </a>
+
+    <a class="item" href="{{ url_for('login', role='admin') }}">
+        <span class="icone">🛠️</span>
+        <h2>Administrador do sistema</h2>
+        <p>Gerenciamento geral.</p>
+    </a>
+
+    <a class="item" href="{{ url_for('login', role='cliente') }}">
+        <span class="icone">🚗</span>
+        <h2>Cliente</h2>
+        <p>Acesse nosso catálogo.</p>
+    </a>
+
+</div>
+
+<div style="text-align:center; margin-top:30px;">
+    <p>É sua primeira visita?</p>
+    <a href="{{ url_for('register_client') }}">
+        Cadastre-se como cliente
+    </a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+
+{% extends "base.html" %}
+
+{% block title %}Estoque | AVIA{% endblock %}
+
+{% block content %}
+
+<a class="voltar" href="{{ url_for('dashboard') }}">← Voltar ao painel</a>
+
+<h1>Controle de estoque</h1>
+<p class="decoracao">Organização é tudo!</p>
+
+<div class="cartao">
+
+    <table style="width:100%; border-collapse:collapse; text-align:left;">
+
+        <thead>
+            <tr style="color:#751F35;">
+                <th style="padding:12px;">Produto</th>
+                <th style="padding:12px;">Quantidade</th>
+                <th style="padding:12px;">Situação</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td style="padding:12px;">Filtro de óleo</td>
+                <td style="padding:12px;">32</td>
+                <td style="padding:12px;">Disponível</td>
+            </tr>
+
+            <tr>
+                <td style="padding:12px;">Pastilha de freio</td>
+                <td style="padding:12px;">18</td>
+                <td style="padding:12px;">Disponível</td>
+            </tr>
+
+            <tr>
+                <td style="padding:12px;">Correia dentada</td>
+                <td style="padding:12px;">12</td>
+                <td style="padding:12px;">Disponível</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<p class="decoracao" style="margin-top:20px;">
+    Dados ilustrativos para apresentação.
+</p>
+
+{% endblock %}

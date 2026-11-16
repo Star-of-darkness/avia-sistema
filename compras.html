@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+
+{% block title %}Compras | AVIA{% endblock %}
+
+{% block content %}
+
+<a class="voltar" href="{{ url_for('dashboard') }}">← Voltar ao painel</a>
+
+<h1>Gestão de compras</h1>
+<p class="decoracao">Acompanhamento de solicitações.</p>
+
+<div class="cartao">
+
+    <h2>Solicitações recentes</h2>
+
+    <div style="padding:18px 0; border-bottom:1px solid #E1E5EB;">
+        <strong>Pedido #001</strong>
+        <p>Compra de filtros de óleo.</p>
+        <span style="color:#A34B60;">Em análise</span>
+    </div>
+
+    <div style="padding:18px 0; border-bottom:1px solid #E1E5EB;">
+        <strong>Pedido #002</strong>
+        <p>Compra de pastilhas de freio.</p>
+        <span style="color:#A34B60;">Aguardando recebimento</span>
+    </div>
+
+    <div style="padding:18px 0;">
+        <strong>Pedido #003</strong>
+        <p>Compra de amortecedores.</p>
+        <span style="color:#287345;">Concluído</span>
+    </div>
+
+</div>
+
+{% endblock %}

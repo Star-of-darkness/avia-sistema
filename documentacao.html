@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+
+{% block title %}Documentação | AVIA{% endblock %}
+
+{% block content %}
+
+<div style="text-align:center; margin:30px 0;">
+    <p class="decoracao">Documentação do projeto</p>
+    <h1>Diagrama de casos de uso</h1>
+    <p>Representação das funcionalidades e dos atores do sistema AVIA.</p>
+</div>
+
+<div class="cartao" style="text-align:center;">
+
+    <img
+        src="{{ url_for('static', filename='imagens/diagrama_casos_uso.png') }}"
+        alt="Diagrama de casos de uso da AVIA"
+        style="width:100%; max-width:1000px; height:auto; border-radius:12px;"
+    >
+
+</div>
+
+<div style="text-align:center; margin-top:25px;">
+    <a href="{{ url_for('home') }}" class="botao">
+        Voltar ao início
+    </a>
+</div>
+
+{% endblock %}

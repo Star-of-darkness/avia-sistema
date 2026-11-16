@@ -1,0 +1,33 @@
+
+{% extends "base.html" %}
+
+{% block title %}Verificação | AVIA{% endblock %}
+
+{% block content %}
+
+<div class="cartao centralizar" style="text-align:center;">
+
+    <span class="icone">📩</span>
+
+    <h1>Verificação concluída!</h1>
+
+    <p class="decoracao">Tudo certo por aqui.</p>
+
+    <p>
+        O endereço informado foi:
+    </p>
+
+    <h3>{{ email }}</h3>
+
+    <p style="margin-top:15px;">
+        Esta é uma demonstração acadêmica.
+        Nenhuma mensagem foi enviada.
+    </p>
+
+    <a class="botao" href="{{ url_for('home') }}">
+        Voltar ao início
+    </a>
+
+</div>
+
+{% endblock %}

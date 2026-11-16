@@ -1,0 +1,45 @@
+
+{% extends "base.html" %}
+
+{% block title %}Cadastro | AVIA{% endblock %}
+
+{% block content %}
+
+<a class="voltar" href="{{ url_for('home') }}">← Voltar</a>
+
+<div class="cartao centralizar">
+
+    <div style="text-align:center;">
+        <span class="icone">🚗</span>
+        <h1>Cadastre-se!</h1>
+        <p class="decoracao">É bom ter você conosco.</p>
+    </div>
+
+    <form method="POST">
+
+        <label>Nome completo</label>
+        <input type="text" name="name"
+               placeholder="Seu nome" required>
+
+        <label>E-mail</label>
+        <input type="email" name="email"
+               placeholder="Seu e-mail" required>
+
+        <label>Senha</label>
+        <input type="password" name="password"
+               placeholder="Crie uma senha" required>
+
+        <button class="botao" style="width:100%;">
+            Criar minha conta
+        </button>
+
+    </form>
+
+    <p style="text-align:center; margin-top:20px;">
+        Já possui cadastro?
+        <a href="{{ url_for('login', role='cliente') }}">Entrar</a>
+    </p>
+
+</div>
+
+{% endblock %}

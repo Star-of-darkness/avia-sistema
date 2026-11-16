@@ -1,0 +1,41 @@
+
+{% extends "base.html" %}
+
+{% block title %}Produtos | AVIA{% endblock %}
+
+{% block content %}
+
+<a class="voltar" href="{{ url_for('dashboard') }}">← Voltar ao painel</a>
+
+<h1>Catálogo de produtos</h1>
+<p class="decoracao">Conheça nossas peças automotivas.</p>
+
+<div class="grade">
+
+    <div class="item">
+        <span class="icone">🛢️</span>
+        <h2>Filtro de óleo</h2>
+        <p>Peça para manutenção automotiva.</p>
+    </div>
+
+    <div class="item">
+        <span class="icone">🛑</span>
+        <h2>Pastilha de freio</h2>
+        <p>Componente do sistema de frenagem.</p>
+    </div>
+
+    <div class="item">
+        <span class="icone">⚙️</span>
+        <h2>Correia dentada</h2>
+        <p>Componente do motor.</p>
+    </div>
+
+    <div class="item">
+        <span class="icone">🚘</span>
+        <h2>Amortecedor</h2>
+        <p>Componente da suspensão.</p>
+    </div>
+
+</div>
+
+{% endblock %}
